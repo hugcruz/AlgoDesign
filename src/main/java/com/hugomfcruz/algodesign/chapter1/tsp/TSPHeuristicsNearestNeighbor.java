@@ -1,11 +1,11 @@
-package com.hugomfcruz.algodesign.chapter1;
+package com.hugomfcruz.algodesign.chapter1.tsp;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import com.hugomfcruz.algodesign.utils.Point;
 
-public class TSPHeuristics {
+public class TSPHeuristicsNearestNeighbor {
 	public static List<Point> NearestNeighbor(List<Point> points) {
 		// copy of input (points will not be changed)
 		List<Point> unvisitedPoints = new ArrayList<>(points);
@@ -24,18 +24,12 @@ public class TSPHeuristics {
 		int nearestIndex = 0;
 		double minimumDistance = Double.MAX_VALUE;
 		for (int i = 0; i < points.size(); ++i) {
-			double dist = distance(target, points.get(i));
+			double dist = target.distance(points.get(i));
 			if (dist < minimumDistance) {
 				minimumDistance = dist;
 				nearestIndex = i;
 			}
 		}
 		return nearestIndex;
-	}
-
-	private static double distance(Point point1, Point point2) {
-		return Math.sqrt(
-				Math.pow(point1.getLeft() - point2.getLeft(), 2) +
-				Math.pow(point1.getRight() - point2.getRight(), 2));
 	}
 }

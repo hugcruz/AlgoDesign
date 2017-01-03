@@ -1,4 +1,4 @@
-package com.hugomfcruz.algodesign.chapter1;
+package com.hugomfcruz.algodesign.chapter1.tsp;
 
 import static org.junit.Assert.assertEquals;
 
@@ -7,10 +7,11 @@ import java.util.List;
 
 import org.junit.Test;
 
+import com.hugomfcruz.algodesign.chapter1.tsp.TSPHeuristicsNearestNeighbor;
 import com.hugomfcruz.algodesign.utils.Point;
 
 
-public class TSPHeuristicsTest {
+public class TSPHeuristicsNearestNeighborTest {
 	@Test
 	public void testNearestNeighborLinear(){
 		List<Point> input = Arrays.asList(
@@ -29,7 +30,7 @@ public class TSPHeuristicsTest {
 				new Point(0,10)
 				);
 		
-		assertEquals(expected, TSPHeuristics.NearestNeighbor(input));
+		assertEquals(expected, TSPHeuristicsNearestNeighbor.NearestNeighbor(input));
 	}
 	
 	@Test
@@ -52,7 +53,7 @@ public class TSPHeuristicsTest {
 				new Point(0,-25)
 				);
 		
-		assertEquals(expected, TSPHeuristics.NearestNeighbor(input));
+		assertEquals(expected, TSPHeuristicsNearestNeighbor.NearestNeighbor(input));
 	}
 	
 	@Test
@@ -75,6 +76,6 @@ public class TSPHeuristicsTest {
 				new Point(0,11)
 				);
 		
-		assertEquals(expected, TSPHeuristics.NearestNeighbor(input));
+		assertEquals(expected, TSPHeuristicsNearestNeighbor.NearestNeighbor(input));
 	}
 }
